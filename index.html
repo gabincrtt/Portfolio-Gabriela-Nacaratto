@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Gabriela Nacaratto Vieira -->
+    <title>Gabriela Nacaratto Vieira</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Ícones -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <style>
+        /* Variáveis de cor */
+        :root {
+            --rosa-destaque: #e8638a;
+            --rosa-claro: #f7c5d5;
+            --rosa-suave: #fde8ef;
+            --fundo-principal: #fdf5f8;
+            --fundo-card: #ffffff;
+            --texto-principal: #3a2030;
+            --texto-secundario: #7a4a60;
+            --azul-aero: #c5e8f5;
+            --verde-aero: #c5eedd;
+            --lilas-aero: #e0d4f7;
+            --borda-suave: rgba(232, 99, 138, 0.18);
+        }
+
+        /* Base */
+        body {
+            background-color: var(--fundo-principal);
+            color: var(--texto-principal);
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            background-image:
+                radial-gradient(ellipse at 10% 20%, rgba(197, 232, 245, 0.35) 0%, transparent 55%),
+                radial-gradient(ellipse at 90% 80%, rgba(224, 212, 247, 0.35) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 50%, rgba(247, 197, 213, 0.2) 0%, transparent 70%);
+            background-attachment: fixed;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, rgba(247, 197, 213, 0.6) 0%, rgba(197, 232, 245, 0.4) 50%, rgba(224, 212, 247, 0.4) 100%);
+            border-bottom: 1.5px solid var(--borda-suave);
+            padding: 2.5rem 0 2rem;
+            text-align: center;
+            backdrop-filter: blur(8px);
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: var(--rosa-destaque);
+            margin-bottom: 0.25rem;
+        }
+
+        header .subtitulo {
+            font-size: 1rem;
+            color: var(--texto-secundario);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+
+        /* Nav */
+        nav {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--borda-suave);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 0.65rem 1.1rem;
+            color: var(--texto-secundario);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 999px;
+            transition: background 0.22s, color 0.22s;
+        }
+
+        nav ul li a:hover {
+            background: var(--rosa-suave);
+            color: var(--rosa-destaque);
+        }
+
+        /* Main e sections */
+        main {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 2rem 1.2rem 3rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        /* Títulos de seção */
+        .secao-titulo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.65rem;
+            color: var(--rosa-destaque);
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid var(--rosa-claro);
+            display: inline-block;
+        }
+
+        /* Ícones dos programas */
+        .programa-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .programa-icone-wrap {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            background: linear-gradient(145deg, #fff, var(--rosa-suave));
+            border: 1.5px solid var(--borda-suave);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            overflow: hidden;
+        }
+
+        .programa-icone-wrap img {
+            width: 46px;
+            height: 46px;
+            object-fit: contain;
+        }
+
+        .programa-icone-wrap:hover {
+            transform: translateY(-4px) scale(1.06);
+            box-shadow: 0 6px 22px rgba(232, 99, 138, 0.18);
+            border-color: var(--rosa-destaque);
+        }
+
+        .programa-nome {
+            font-size: 0.75rem;
+            color: var(--texto-secundario);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Item - Experiência */
+        .exp-item {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--borda-suave);
+            border-left: 4px solid var(--rosa-destaque);
+            border-radius: 0 12px 12px 0;
+            padding: 0.7rem 1.1rem;
+            margin-bottom: 0.85rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .exp-item:hover {
+            background: var(--rosa-suave);
+            transform: translateX(4px);
+        }
+
+        .exp-item h5 {
+            margin: 0;
+            font-size: 0.97rem;
+            font-weight: 700;
+            color: var(--texto-principal);
+        }
+
+        .exp-item .exp-data {
+            font-size: 0.82rem;
+            color: var(--texto-secundario);
+            margin: 0;
+        }
+
+        /* Ilustrações */
+        .ilustracao-card {
+            margin-bottom: 2rem;
+        }
+
+        .ilustracao-card img {
+            width: 100%;
+            border-radius: 16px;
+            border: 1.5px solid var(--borda-suave);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .ilustracao-card img:hover {
+            transform: scale(1.015);
+            box-shadow: 0 10px 32px rgba(232, 99, 138, 0.16);
+        }
+
+        .ilustracao-card .legenda {
+            font-size: 0.9rem;
+            color: var(--texto-secundario);
+            font-weight: 600;
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        /* Concepts */
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .concept-grid img,
+        .concept-full img {
+            width: 100%;
+            border-radius: 12px;
+            border: 1.5px solid var(--borda-suave);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .concept-grid img:hover,
+        .concept-full img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 28px rgba(232, 99, 138, 0.15);
+        }
+
+        .concept-grid .legenda,
+        .concept-full .legenda {
+            font-size: 0.85rem;
+            color: var(--texto-secundario);
+            font-weight: 600;
+            margin-top: 0.45rem;
+            text-align: center;
+        }
+
+        .concept-full {
+            max-width: 50%;
+            margin: 0 auto;
+        }
+
+        /* Botões de contato */
+        .btn-contato {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.55rem 1.3rem;
+            background: var(--rosa-destaque);
+            color: #fff;
+            border: none;
+            border-radius: 999px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 0.92rem;
+            text-decoration: none;
+            transition: background 0.22s, transform 0.18s, box-shadow 0.22s;
+            box-shadow: 0 3px 12px rgba(232, 99, 138, 0.25);
+        }
+
+        .btn-contato:hover {
+            background: #c94a71;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 99, 138, 0.35);
+        }
+
+        .btn-contato:active {
+            transform: scale(0.97);
+        }
+
+        .btn-contato svg {
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+        }
+
+        /* Sobre mim */
+        .sobre-card {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1.5px solid var(--borda-suave);
+            border-radius: 16px;
+            padding: 1.2rem 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, rgba(247, 197, 213, 0.5), rgba(224, 212, 247, 0.4));
+            border-top: 1.5px solid var(--borda-suave);
+            text-align: center;
+            padding: 1.5rem 1rem;
+            font-size: 0.85rem;
+            color: var(--texto-secundario);
+        }
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--rosa-destaque);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.7rem; }
+            .concept-grid { grid-template-columns: 1fr; }
+            .concept-full { max-width: 100%; }
+            .contato-botoes { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Cabeçalho principal da página -->
+    <header>
+        <div class="container">
+            <h1>Gabriela Nacaratto Vieira</h1>
+            <p class="subtitulo">Artista 2D &nbsp;·&nbsp; Ilustradora &nbsp;·&nbsp; Concept Art</p>
+        </div>
+    </header>
+
+    <!-- Navegação interna -->
+    <nav aria-label="Navegação principal">
+        <div class="container py-2">
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#programas">Programas</a></li>
+                <li><a href="#experiencia">Experiência</a></li>
+                <li><a href="#ilustracoes">Ilustrações</a></li>
+                <li><a href="#concepts">Concepts</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Conteúdo principal -->
+    <main>
+
+        <!-- Seção: Sobre mim -->
+        <section id="sobre" aria-labelledby="titulo-sobre">
+            <h2 class="secao-titulo" id="titulo-sobre">Sobre mim</h2>
+            <div class="sobre-card">
+                <p>Oi, eu sou a Gabi! Sou uma ilustradora e artista 2D brasileira, com foco em arte para jogos e 3 anos de experiência como freelancer. Sou apaixonada por arte, luz, composição e storytelling.</p>
+            </div>
+        </section>
+
+        <!-- Seção: Programas utilizados -->
+        <section id="programas" aria-labelledby="titulo-programas">
+            <h2 class="secao-titulo" id="titulo-programas">Programas utilizados</h2>
+            <div class="d-flex flex-wrap gap-3">
+
+                <div class="programa-item">
+                    <div class="programa-icone-wrap">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/960px-Adobe_Photoshop_CC_icon.svg.png"
+                            alt="Ícone do Adobe Photoshop">
+                    </div>
+                    <span class="programa-nome">Photoshop</span>
+                </div>
+
+                <div class="programa-item">
+                    <div class="programa-icone-wrap">
+                        <img src="https://play-lh.googleusercontent.com/X_tdMAC-1SnBCZpb2lN7WRzOpLA4-sjT_uG82OLLhlIyXF0DcjEuN7XxnZUoUh6BpGP1voWO7SjwY4coSKFKHg"
+                            alt="Ícone do Clip Studio Paint">
+                    </div>
+                    <span class="programa-nome">Clip Studio</span>
+                </div>
+
+                <div class="programa-item">
+                    <div class="programa-icone-wrap">
+                        <img src="https://freepngimg.com/download/icon/ubuntu/59906-icons-linux-rendering-computer-graphics-blender-3d.png"
+                            alt="Ícone do Blender">
+                    </div>
+                    <span class="programa-nome">Blender</span>
+                </div>
+
+                <div class="programa-item">
+                    <div class="programa-icone-wrap">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Procreate_icon.png/250px-Procreate_icon.png"
+                            alt="Ícone do Procreate">
+                    </div>
+                    <span class="programa-nome">Procreate</span>
+                </div>
+
+                <div class="programa-item">
+                    <div class="programa-icone-wrap">
+                        <img src="https://share.natebeaty.com//aseprite/aseprite.png"
+                            alt="Ícone do Aseprite">
+                    </div>
+                    <span class="programa-nome">Aseprite</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Seção: Experiência e educação -->
+        <section id="experiencia" aria-labelledby="titulo-experiencia">
+            <h2 class="secao-titulo" id="titulo-experiencia">Experiência e educação</h2>
+
+            <article class="exp-item">
+                <h5>Fundamentos da Arte — Skilltree</h5>
+                <p class="exp-data">janeiro 2022 – agosto 2022</p>
+            </article>
+
+            <article class="exp-item">
+                <h5>Bacharelado em Jogos Digitais — Senac</h5>
+                <p class="exp-data">fevereiro 2023 – dezembro 2026</p>
+            </article>
+
+            <article class="exp-item">
+                <h5>Introdução a Pintura Digital — Udemy</h5>
+                <p class="exp-data">junho 2025 – julho 2025</p>
+            </article>
+
+            <article class="exp-item">
+                <h5>Fundamentos da Ilustração Digital — Udemy</h5>
+                <p class="exp-data">dezembro 2025 – fevereiro 2026</p>
+            </article>
+
+            <article class="exp-item">
+                <h5>Arte Digital Suprema: Domine a Pintura Digital (Português) — Udemy</h5>
+                <p class="exp-data">julho 2025 – agosto 2025</p>
+            </article>
+
+            <article class="exp-item">
+                <h5>Fundamentos da Pintura Digital — ICS Art</h5>
+                <p class="exp-data">abril 2026 – em andamento</p>
+            </article>
+
+            <article class="exp-item">
+                <h5>Yearly subscription — Schoolism</h5>
+                <p class="exp-data">dezembro 2025 – em andamento</p>
+            </article>
+
+        </section>
+
+        <!-- Seção: Ilustrações -->
+        <section id="ilustracoes" aria-labelledby="titulo-ilustracoes">
+            <h2 class="secao-titulo" id="titulo-ilustracoes">Ilustrações</h2>
+
+            <div class="ilustracao-card">
+                <img src="https://cdna.artstation.com/p/assets/images/images/095/620/562/large/gabi-nacaratto-fundo-biblioteca.jpg?1769039961"
+                    alt="Key art estilo biblioteca para o jogo Shuwa Shuwa Guin! — cápsula com personagem principal">
+                <p class="legenda">Steam Key Art — Shuwa Shuwa Guin!</p>
+            </div>
+
+            <div class="ilustracao-card">
+                <img src="https://cdnb.artstation.com/p/assets/images/images/095/620/833/large/gabi-nacaratto-mainmenureserva.webp?1769040898"
+                    alt="Arte do menu principal do jogo Shuwa Shuwa Guin!, com personagens e cenário ilustrado">
+                <p class="legenda">Menu Game Art — Shuwa Shuwa Guin!</p>
+            </div>
+
+            <div class="ilustracao-card">
+                <img src="https://cdnb.artstation.com/p/assets/images/images/084/463/561/large/gabi-nacaratto-ilustracao6png.jpg?1769040790"
+                    alt="Ilustração autoral de personagens estilo demônias, com técnica de arte em giz">
+                <p class="legenda">Ilustração estilo arte em giz</p>
+            </div>
+
+        </section>
+
+        <!-- Seção: Concepts -->
+        <section id="concepts" aria-labelledby="titulo-concepts">
+            <h2 class="secao-titulo" id="titulo-concepts">Concepts</h2>
+            <h3 style="font-size:1.05rem; color: var(--texto-secundario); margin-bottom: 1rem;">Processo de concept de personagem</h3>
+
+            <!-- Design final do personagem -->
+            <div class="ilustracao-card">
+                <img src="https://cdnb.artstation.com/p/assets/images/images/096/817/413/large/gabi-nacaratto-chr-protagonista-final-3.webp?1772402879"
+                    alt="Design final do personagem protagonista — arte completa com cores e detalhes finalizados">
+                <p class="legenda">Design Final</p>
+            </div>
+
+            <!-- Exploração de Design e Estudo de Valor -->
+            <div class="concept-grid">
+                <div>
+                    <img src="https://cdna.artstation.com/p/assets/images/images/096/816/304/large/gabi-nacaratto-chr-protagonista-final-exploration.webp?1772400153"
+                        alt="Exploração de design do personagem protagonista — múltiplas variações de silhueta e elementos visuais">
+                    <p class="legenda">Exploração de Design</p>
+                </div>
+                <div>
+                    <img src="https://cdnb.artstation.com/p/assets/images/images/096/816/309/large/gabi-nacaratto-chr-protagonista-final-value.webp?1772400163"
+                        alt="Estudo de valor do personagem protagonista — análise de luz e sombra em escala de cinza">
+                    <p class="legenda">Estudo de valor</p>
+                </div>
+            </div>
+
+            <!-- Exploração de cor -->
+            <div class="concept-full">
+                <img src="https://cdnb.artstation.com/p/assets/images/images/096/816/311/large/gabi-nacaratto-chr-protagonista-final-colors.webp?1772400169"
+                    alt="Exploração de cores do personagem protagonista — variações de paleta de cor para o design final">
+                <p class="legenda">Exploração de cor</p>
+            </div>
+
+        </section>
+
+        <!-- Seção: Contato -->
+        <section id="contato" aria-labelledby="titulo-contato">
+            <h2 class="secao-titulo" id="titulo-contato">Contato</h2>
+            <p>Entre em contato pelo e-mail: <a href="mailto:vgabinacaratto@gmail.com" style="color: var(--rosa-destaque); font-weight: 700;">vgabinacaratto@gmail.com</a></p>
+
+            <!-- Botões de contato -->
+            <div class="contato-botoes d-flex flex-wrap gap-3 mt-3">
+
+                <a href="https://www.artstation.com/gabincrtt" class="btn-contato" target="_blank"
+                    rel="noopener noreferrer" aria-label="ArtStation de Gabriela (abre em nova aba)">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M0 17.723l2.027 3.505h.001a2.424 2.424 0 0 0 2.164 1.333h13.457l-2.792-4.838H0zm24 .025c0-.484-.143-.935-.388-1.314L15.728 2.728a2.424 2.424 0 0 0-2.164-1.333H9.03l10.088 17.489 2.763-4.771A2.41 2.41 0 0 0 24 17.748zm-11.99-3.169L7.207 6.570l-5.356 9.28h9.16z"/>
+                    </svg>
+                    ArtStation
+                </a>
+
+                <a href="https://www.linkedin.com/in/gabincrtt/" class="btn-contato" target="_blank"
+                    rel="noopener noreferrer" aria-label="LinkedIn de Gabriela (abre em nova aba)">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+
+                <a href="https://www.instagram.com/nbiatto/" class="btn-contato" target="_blank"
+                    rel="noopener noreferrer" aria-label="Instagram de Gabriela (abre em nova aba)">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+                    </svg>
+                    Instagram
+                </a>
+
+                <a href="mailto:vgabinacaratto@gmail.com" class="btn-contato"
+                    aria-label="Enviar e-mail para Gabriela">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                    </svg>
+                    Email
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Gabriela Nacaratto Vieira — Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
