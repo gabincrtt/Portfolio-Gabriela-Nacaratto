@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Ilustrações — Gabriela Nacaratto Vieira</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rosa: #e8638a;
+            --rosa-claro: #f7c5d5;
+            --rosa-suave: #fde8ef;
+            --fundo: #fdf5f8;
+            --texto: #3a2030;
+            --texto-sec: #7a4a60;
+            --borda: rgba(232, 99, 138, 0.18);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--fundo);
+            color: var(--texto);
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            background-image:
+                radial-gradient(ellipse at 10% 20%, rgba(197,232,245,0.35) 0%, transparent 55%),
+                radial-gradient(ellipse at 90% 80%, rgba(224,212,247,0.35) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 50%, rgba(247,197,213,0.2) 0%, transparent 70%);
+            background-attachment: fixed;
+        }
+        header {
+            background: linear-gradient(135deg, rgba(247,197,213,0.6) 0%, rgba(197,232,245,0.4) 50%, rgba(224,212,247,0.4) 100%);
+            border-bottom: 1.5px solid var(--borda);
+            padding: 2.5rem 0 2rem;
+            text-align: center;
+            backdrop-filter: blur(8px);
+        }
+        header h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--rosa); margin-bottom: 0.25rem; }
+        header .subtitulo { font-size: 1rem; color: var(--texto-sec); font-weight: 600; letter-spacing: 0.04em; }
+        nav {
+            background: rgba(255,255,255,0.75);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--borda);
+            position: sticky; top: 0; z-index: 100;
+        }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; padding: 0.5rem 1rem; }
+        nav ul li a {
+            display: block; padding: 0.55rem 1.1rem;
+            color: var(--texto-sec); text-decoration: none;
+            font-weight: 600; font-size: 0.9rem; border-radius: 999px;
+            transition: background 0.22s, color 0.22s;
+        }
+        nav ul li a:hover, nav ul li a.ativo { background: var(--rosa-suave); color: var(--rosa); }
+        main { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.2rem 4rem; }
+        .secao-titulo {
+            font-family: 'Playfair Display', serif; font-size: 1.65rem;
+            color: var(--rosa); margin-bottom: 0.5rem;
+            padding-bottom: 0.4rem; border-bottom: 2px solid var(--rosa-claro);
+            display: inline-block;
+        }
+        .subtitulo-secao { color: var(--texto-sec); font-size: 0.95rem; margin-bottom: 2rem; }
+
+        /* BREADCRUMB */
+        .breadcrumb { font-size: 0.85rem; color: var(--texto-sec); margin-bottom: 1.5rem; }
+        .breadcrumb a { color: var(--rosa); text-decoration: none; font-weight: 600; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        /* GRID de ilustrações */
+        .grid-ilustracoes {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+
+        .ilustracao-card img {
+            width: 100%; border-radius: 16px;
+            border: 1.5px solid var(--borda);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: block;
+        }
+        .ilustracao-card img:hover {
+            transform: scale(1.015);
+            box-shadow: 0 10px 32px rgba(232,99,138,0.16);
+        }
+        .ilustracao-card .legenda {
+            font-size: 0.9rem; color: var(--texto-sec);
+            font-weight: 600; margin-top: 0.6rem; text-align: center;
+        }
+
+        footer {
+            background: linear-gradient(135deg, rgba(247,197,213,0.5), rgba(224,212,247,0.4));
+            border-top: 1.5px solid var(--borda);
+            text-align: center; padding: 1.5rem 1rem;
+            font-size: 0.85rem; color: var(--texto-sec);
+        }
+
+        .voltar-link {
+            display: inline-flex; align-items: center; gap: 0.4rem;
+            color: var(--rosa); font-weight: 700; text-decoration: none;
+            font-size: 0.9rem; margin-bottom: 1.5rem;
+            padding: 0.4rem 1rem; border: 1.5px solid var(--rosa-claro);
+            border-radius: 999px; transition: background 0.2s;
+        }
+        .voltar-link:hover { background: var(--rosa-suave); }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Gabriela Nacaratto Vieira</h1>
+    <p class="subtitulo">Artista 2D &nbsp;·&nbsp; Ilustradora &nbsp;·&nbsp; Concept Art</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="ilustracoes.html" class="ativo">Ilustrações</a></li>
+        <li><a href="concepts.html">Concepts</a></li>
+        <li><a href="assets.html">Assets para jogos</a></li>
+        <li><a href="index.html#experiencia">Experiência</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="breadcrumb">
+        <a href="index.html">Início</a> &nbsp;/&nbsp; Ilustrações
+    </div>
+
+    <h2 class="secao-titulo">Ilustrações</h2>
+    <p class="subtitulo-secao">Ilustrações autorais e comerciais, incluindo arte para jogos e personagens.</p>
+
+    <div class="grid-ilustracoes">
+
+        <div class="ilustracao-card">
+            <img src="https://cdna.artstation.com/p/assets/images/images/095/620/562/large/gabi-nacaratto-fundo-biblioteca.jpg?1769039961"
+                alt="Key art estilo biblioteca para o jogo Shuwa Shuwa Guin!">
+            <p class="legenda">Steam Key Art - Shuwa Shuwa Guin!</p>
+        </div>
+
+        <div class="ilustracao-card">
+            <img src="https://cdnb.artstation.com/p/assets/images/images/095/620/833/large/gabi-nacaratto-mainmenureserva.webp?1769040898"
+                alt="Arte do menu principal do jogo Shuwa Shuwa Guin!">
+            <p class="legenda">Menu Game Art - Shuwa Shuwa Guin!</p>
+        </div>
+
+        <div class="ilustracao-card">
+            <img src="https://cdnb.artstation.com/p/assets/images/images/084/463/561/large/gabi-nacaratto-ilustracao6png.jpg?1769040790"
+                alt="Ilustração autoral estilo arte em giz">
+            <p class="legenda">Ilustração - Mio e Maya</p>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Gabriela Nacaratto Vieira — Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Concepts — Gabriela Nacaratto Vieira</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rosa: #e8638a;
+            --rosa-claro: #f7c5d5;
+            --rosa-suave: #fde8ef;
+            --fundo: #fdf5f8;
+            --texto: #3a2030;
+            --texto-sec: #7a4a60;
+            --borda: rgba(232, 99, 138, 0.18);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--fundo);
+            color: var(--texto);
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            background-image:
+                radial-gradient(ellipse at 10% 20%, rgba(197,232,245,0.35) 0%, transparent 55%),
+                radial-gradient(ellipse at 90% 80%, rgba(224,212,247,0.35) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 50%, rgba(247,197,213,0.2) 0%, transparent 70%);
+            background-attachment: fixed;
+        }
+        header {
+            background: linear-gradient(135deg, rgba(247,197,213,0.6) 0%, rgba(197,232,245,0.4) 50%, rgba(224,212,247,0.4) 100%);
+            border-bottom: 1.5px solid var(--borda);
+            padding: 2.5rem 0 2rem;
+            text-align: center; backdrop-filter: blur(8px);
+        }
+        header h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--rosa); margin-bottom: 0.25rem; }
+        header .subtitulo { font-size: 1rem; color: var(--texto-sec); font-weight: 600; letter-spacing: 0.04em; }
+        nav {
+            background: rgba(255,255,255,0.75); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--borda); position: sticky; top: 0; z-index: 100;
+        }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; padding: 0.5rem 1rem; }
+        nav ul li a {
+            display: block; padding: 0.55rem 1.1rem;
+            color: var(--texto-sec); text-decoration: none;
+            font-weight: 600; font-size: 0.9rem; border-radius: 999px;
+            transition: background 0.22s, color 0.22s;
+        }
+        nav ul li a:hover, nav ul li a.ativo { background: var(--rosa-suave); color: var(--rosa); }
+
+        main { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.2rem 4rem; }
+
+        .breadcrumb { font-size: 0.85rem; color: var(--texto-sec); margin-bottom: 1.5rem; }
+        .breadcrumb a { color: var(--rosa); text-decoration: none; font-weight: 600; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        .secao-titulo {
+            font-family: 'Playfair Display', serif; font-size: 1.65rem;
+            color: var(--rosa); margin-bottom: 0.5rem;
+            padding-bottom: 0.4rem; border-bottom: 2px solid var(--rosa-claro);
+            display: inline-block;
+        }
+        .subtitulo-secao { color: var(--texto-sec); font-size: 0.95rem; margin-bottom: 2.5rem; }
+
+        /* PROCESSO */
+        .processo-titulo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--texto-sec);
+            margin: 2.5rem 0 1.2rem;
+        }
+
+        .img-wrap { margin-bottom: 2rem; }
+        .img-wrap img {
+            width: 100%; border-radius: 16px;
+            border: 1.5px solid var(--borda);
+            display: block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .img-wrap img:hover {
+            transform: scale(1.012);
+            box-shadow: 0 10px 32px rgba(232,99,138,0.15);
+        }
+        .img-wrap .legenda {
+            font-size: 0.88rem;
+            color: var(--texto-sec);
+            font-weight: 600;
+            margin-top: 0.6rem;
+            text-align: left; 
+            font-style: bold;
+        }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 2rem; }
+        .grid-2 img { width: 100%; border-radius: 12px; border: 1.5px solid var(--borda); display: block; transition: transform 0.3s; }
+        .grid-2 img:hover { transform: scale(1.02); box-shadow: 0 8px 28px rgba(232,99,138,0.15); }
+        .grid-2 .legenda { font-size: 0.82rem; color: var(--texto-sec); font-weight: 600; margin-top: 0.45rem; text-align: left; }
+
+        .img-center { max-width: 50%; margin: 0 auto 2rem; }
+        .img-center img { width: 100%; border-radius: 12px; border: 1.5px solid var(--borda); display: block; }
+        .img-center .legenda { font-size: 0.85rem; color: var(--texto-sec); font-weight: 600; margin-top: 0.45rem; text-align: left; }
+
+        footer {
+            background: linear-gradient(135deg, rgba(247,197,213,0.5), rgba(224,212,247,0.4));
+            border-top: 1.5px solid var(--borda);
+            text-align: center; padding: 1.5rem 1rem;
+            font-size: 0.85rem; color: var(--texto-sec);
+        }
+
+        @media (max-width: 600px) {
+            .grid-2 { grid-template-columns: 1fr; }
+            .img-center { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Gabriela Nacaratto Vieira</h1>
+    <p class="subtitulo">Artista 2D &nbsp;·&nbsp; Ilustradora &nbsp;·&nbsp; Concept Art</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="ilustracoes.html">Ilustrações</a></li>
+        <li><a href="concepts.html" class="ativo">Concepts</a></li>
+        <li><a href="assets.html">Assets para jogos</a></li>
+        <li><a href="index.html#experiencia">Experiência</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="breadcrumb">
+        <a href="index.html">Início</a> &nbsp;/&nbsp; Concepts
+    </div>
+
+    <h2 class="secao-titulo">Concepts</h2>
+    <p class="subtitulo-secao">Processo completo de concept art de personagem, do rascunho ao design finalizado.</p>
+
+    <h3 class="processo-titulo">Processo de concept de personagem - Protagonista</h3>
+
+    <!-- Design final -->
+    <div class="img-wrap">
+        <img src="https://cdnb.artstation.com/p/assets/images/images/096/817/413/large/gabi-nacaratto-chr-protagonista-final-3.webp?1772402879"
+            alt="Design final do personagem protagonista">
+        <p class="legenda">Design Final</p>
+    </div>
+
+    <!-- Exploração e Valor -->
+    <div class="grid-2">
+        <div>
+            <img src="https://cdna.artstation.com/p/assets/images/images/096/816/304/large/gabi-nacaratto-chr-protagonista-final-exploration.webp?1772400153"
+                alt="Exploração de design">
+            <p class="legenda">Exploração de Design</p>
+        </div>
+        <div>
+            <img src="https://cdnb.artstation.com/p/assets/images/images/096/816/309/large/gabi-nacaratto-chr-protagonista-final-value.webp?1772400163"
+                alt="Estudo de valor">
+            <p class="legenda">Estudo de Valor</p>
+        </div>
+    </div>
+
+    <!-- Cores -->
+    <div class="img-center">
+        <img src="https://cdnb.artstation.com/p/assets/images/images/096/816/311/large/gabi-nacaratto-chr-protagonista-final-colors.webp?1772400169"
+            alt="Exploração de cores">
+        <p class="legenda">Exploração de Cores</p>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Gabriela Nacaratto Vieira — Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>

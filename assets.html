@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Assets para Jogos — Gabriela Nacaratto Vieira</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --rosa: #e8638a;
+            --rosa-claro: #f7c5d5;
+            --rosa-suave: #fde8ef;
+            --fundo: #fdf5f8;
+            --texto: #3a2030;
+            --texto-sec: #7a4a60;
+            --borda: rgba(232, 99, 138, 0.18);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background-color: var(--fundo);
+            color: var(--texto);
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            background-image:
+                radial-gradient(ellipse at 10% 20%, rgba(197,232,245,0.35) 0%, transparent 55%),
+                radial-gradient(ellipse at 90% 80%, rgba(224,212,247,0.35) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 50%, rgba(247,197,213,0.2) 0%, transparent 70%);
+            background-attachment: fixed;
+        }
+        header {
+            background: linear-gradient(135deg, rgba(247,197,213,0.6) 0%, rgba(197,232,245,0.4) 50%, rgba(224,212,247,0.4) 100%);
+            border-bottom: 1.5px solid var(--borda);
+            padding: 2.5rem 0 2rem;
+            text-align: center; backdrop-filter: blur(8px);
+        }
+        header h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--rosa); margin-bottom: 0.25rem; }
+        header .subtitulo { font-size: 1rem; color: var(--texto-sec); font-weight: 600; letter-spacing: 0.04em; }
+        nav {
+            background: rgba(255,255,255,0.75); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--borda); position: sticky; top: 0; z-index: 100;
+        }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; padding: 0.5rem 1rem; }
+        nav ul li a {
+            display: block; padding: 0.55rem 1.1rem;
+            color: var(--texto-sec); text-decoration: none;
+            font-weight: 600; font-size: 0.9rem; border-radius: 999px;
+            transition: background 0.22s, color 0.22s;
+        }
+        nav ul li a:hover, nav ul li a.ativo { background: var(--rosa-suave); color: var(--rosa); }
+
+        main { max-width: 900px; margin: 0 auto; padding: 2.5rem 1.2rem 4rem; }
+
+        .breadcrumb { font-size: 0.85rem; color: var(--texto-sec); margin-bottom: 1.5rem; }
+        .breadcrumb a { color: var(--rosa); text-decoration: none; font-weight: 600; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        .secao-titulo {
+            font-family: 'Playfair Display', serif; font-size: 1.65rem;
+            color: var(--rosa); margin-bottom: 0.5rem;
+            padding-bottom: 0.4rem; border-bottom: 2px solid var(--rosa-claro);
+            display: inline-block;
+        }
+
+        /* Em breve */
+        .em-breve {
+            margin-top: 2.5rem;
+            background: rgba(255,255,255,0.6);
+            border: 2px dashed var(--rosa-claro);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .em-breve .emoji { font-size: 3.5rem; margin-bottom: 1rem; display: block; }
+        .em-breve h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--rosa);
+            margin-bottom: 0.6rem;
+        }
+        .em-breve p { color: var(--texto-sec); font-size: 0.97rem; max-width: 420px; margin: 0 auto; }
+
+        .tag-lista { display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center; margin-top: 1.5rem; }
+        .tag {
+            background: var(--rosa-suave);
+            color: var(--rosa);
+            font-size: 0.82rem;
+            font-weight: 700;
+            padding: 0.3rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid var(--rosa-claro);
+        }
+
+        footer {
+            background: linear-gradient(135deg, rgba(247,197,213,0.5), rgba(224,212,247,0.4));
+            border-top: 1.5px solid var(--borda);
+            text-align: center; padding: 1.5rem 1rem;
+            font-size: 0.85rem; color: var(--texto-sec);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Gabriela Nacaratto Vieira</h1>
+    <p class="subtitulo">Artista 2D &nbsp;·&nbsp; Ilustradora &nbsp;·&nbsp; Concept Art</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="ilustracoes.html">Ilustrações</a></li>
+        <li><a href="concepts.html">Concepts</a></li>
+        <li><a href="assets.html" class="ativo">Assets para jogos</a></li>
+        <li><a href="index.html#experiencia">Experiência</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="breadcrumb">
+        <a href="index.html">Início</a> &nbsp;/&nbsp; Assets para jogos
+    </div>
+
+    <h2 class="secao-titulo">Assets para jogos</h2>
+
+    <div class="em-breve">
+        <span class="emoji">🎮</span>
+        <h3>Em breve!</h3>
+        <p>Esta seção está sendo preparada com carinho. Sprites, tilesets, UI e outros assets de jogos chegarão em breve por aqui.</p>
+        <div class="tag-lista">
+            <span class="tag">Sprites</span>
+            <span class="tag">Tilesets</span>
+            <span class="tag">UI / HUD</span>
+            <span class="tag">Pixel Art</span>
+            <span class="tag">Itens</span>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Gabriela Nacaratto Vieira — Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>
